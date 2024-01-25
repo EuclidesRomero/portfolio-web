@@ -1,0 +1,70 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import Linkedind from "../components/icons/Linkedin.astro";
+import GitHub from "../components/icons/GitHub.astro";
+import Gmail from "../components/icons/Gmail.astro";
+import Social from "../components/Social.astro";
+import Experience from "../components/Experience.astro";
+import BriefCase from "../components/icons/BriefCase.astro";
+import CodeIcons from "../components/icons/Code.astro";
+import Projects from "../components/Projects.astro";
+---
+
+<Layout
+  title="Euclides Romero - Desarrollador web y Programador "
+  description="Estudiante de ingenieria con 2 años de experiencia en desarrollo de software  utilizando stack MERN"
+>
+  <main class="px-4">
+    <section class="w-full mx-auto lg:w-[740px] py-36 pb-20" id="top">
+      <div class="flex justify-center items-center mb-10">
+        <img
+          class="rounded-full size-40 mb-5"
+          src="mi-foto.jpg"
+          alt="Euclides Romero foto "
+        />
+      </div>
+
+      <h1 class="text-white  text-2xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10 text-center">
+        Hola, soy Euclides R. <a
+          href="https://www.linkedin.com/in/euclidesromero/"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+          ><Badge>Disponible para trabajar</Badge></a
+        >
+      </h1>
+      <h2 class="lg:text-2xl text-wrap opacity-80 max-w-[700px]">
+        Estudiante de Ultimo año de Ingeniería de sistemas. Apasionado en este
+        mundo del desarrollo de software
+      </h2>
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <Social href="https://www.linkedin.com/in/euclidesromero/">
+          <Linkedind class="w-6 h-6" />
+          Linkedin
+        </Social>
+        <Social href="https://github.com/EuclidesRomero">
+          <GitHub class=" size-4 lg:size-6" />
+          GitHub
+        </Social>
+        <Social href="mailto:euclidesantonioromeroibarra@gmail.com">
+          <Gmail class="w-6 h-6" />
+          euclidesantonioromeroibarra@gmaill.com
+        </Social>
+      </nav>
+    </section>
+    <section class="w-full mx-auto lg:w-[740px]" id="experiencia">
+      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+        <BriefCase class="size-8" /> Experiencia laboral
+      </h2>
+      <Experience />
+    </section>
+
+    <section class="w-full mx-auto lg:w-[740px]" id="proyectos">
+      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+        <CodeIcons class="size-8" /> Proyectos
+      </h2>
+      <Projects />
+    </section>
+  </main>
+</Layout>

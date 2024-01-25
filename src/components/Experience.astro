@@ -1,0 +1,28 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+  {
+    date: "Enero 2022 - Presente",
+    title: "Desarrollador Web",
+    description: "Trabajando en el desarrollo de aplicaciones web utilizando tecnologías modernas como React.js y Node.js."
+  },
+  {
+    date: "Julio 2020 - Diciembre 2021",
+    title: "Analista de Datos",
+    description: "Responsable de analizar y visualizar datos para informar decisiones estratégicas en la empresa."
+  },
+  {
+    date: "Marzo 2018 - Junio 2020",
+    title: "Diseñador UX/UI",
+    description: "Diseñando interfaces de usuario atractivas y funcionales para mejorar la experiencia del usuario en aplicaciones móviles."
+  }
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 mt-10 ml-3">   
+    {EXPERIENCE.map(experience => (
+        <li class="mb-10 ms-4">
+            <ExperienceItem {...experience} />
+        </li>
+    ))}               
+</ol>

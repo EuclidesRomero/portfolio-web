@@ -1,0 +1,53 @@
+---
+import Nexjs from "./icons/Nextjs.astro";
+import Tailwindcss from "./icons/Tailwindcss.astro";
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    color: "bg-black text-white",
+    icon: Nexjs,
+  },
+
+  TAILWIND: {
+    name: "Tailwind CSS",
+    color: "bg-[#003159] text-white",
+    icon: Tailwindcss,
+  },
+};
+const PROJECTS = [
+  {
+    title: "GuitarLA",
+    name: "TaskManager",
+    description:
+      "Una aplicación web para gestionar y organizar tareas diarias. Permite a los usuarios crear, editar y eliminar tareas.",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    github: "https://github.com/tuusuario/task-manager",
+    link: "https://tuproyecto.com/taskmanager",
+    image: "public/GuitarLA.webp",
+  },
+];
+---
+
+{
+  PROJECTS.map((project) => (
+    <article class="pt-5">
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
+        {project.title}
+      </h3>
+      <img class="rounded-none shadow-white/10" src={project.image} />
+      <p class="text-lg mb-4 text-pretty">{project.description}</p>
+      <ul class="flex gap-x-2 flex-row">
+        {project.tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-xs ${tag.color} py-1 px-2`}
+            >
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </article>
+  ))
+}
