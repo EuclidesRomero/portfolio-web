@@ -1,6 +1,12 @@
 ---
 import Nexjs from "./icons/Nextjs.astro";
 import Tailwindcss from "./icons/Tailwindcss.astro";
+import JavaScript from "./icons/JavaScript.astro";
+import Htm5 from "./icons/Htm5.astro"
+import Css from './icons/Css.astro';
+import Firebase from "./icons/Firebase.astro";
+import React from "./icons/React.astro"
+
 const TAGS = {
   NEXT: {
     name: "Next.js",
@@ -13,17 +19,59 @@ const TAGS = {
     color: "bg-[#003159] text-white",
     icon: Tailwindcss,
   },
+
+  JAVASCRIPT: {
+    name: "JavaScript",
+    color:"bg-[#003159] text-white",
+    icon: JavaScript,
+  },
+
+  HTML5: {
+    name: "Html 5",
+    color: "bg-[#003159] text-white",
+    icon: Htm5,
+  },
+
+  Css: {
+    name: "Css3",
+    color: "bg-[#003159] text-white",
+    icon: Css,
+  },
+
+  Firebase: {
+  name: "Firebae",
+  color: "bg-[#003159] text-white",
+  icon: Firebase,
+
+  },
+  
+  React: {
+    name: "React js",
+    color: "bg-[#003159] text-white",
+    icon: React,
+  }
+  
 };
 const PROJECTS = [
-  {
-    title: "GuitarLA",
-    name: "TaskManager",
+{
+    title:"Artesanias Colombianas",
+    name: "",
     description:
-      "Una aplicación web para gestionar y organizar tareas diarias. Permite a los usuarios crear, editar y eliminar tareas.",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-    github: "https://github.com/tuusuario/task-manager",
-    link: "https://tuproyecto.com/taskmanager",
-    image: "public/GuitarLA.webp",
+      "Aplicación de comercio electrónico con React, Tailwind CSS y Firebase. La app incluye autenticación segura, carrito de compras, favoritos, alertas, paginación y navegación eficiente con React Router.",
+    tags: [TAGS.JAVASCRIPT, TAGS.React, TAGS.Firebase, TAGS.TAILWIND],
+    github:"https://github.com/EuclidesRomero/react-firebase",
+    link: "https://artesanias-colombianas.netlify.app/",
+    image: "public/artesanias-foto.webp" 
+  },
+  {
+    title:"Todo - app",
+    name: "",
+    description:
+      "Una aplicación web para gestionar y organizar tareas diarias. Permite a los usuarios crear y eliminar tareas. Aunque es un proyecto básico, fue una excelente experiencia crear una aplicación 100% con JavaScript y hacerla reactiva.",
+    tags: [TAGS.JAVASCRIPT, TAGS.HTML5, TAGS.Css],
+    github: "https://github.com/EuclidesRomero/Todo--app-vanillaJS",
+    link: "https://candid-brigadeiros-7aba97.netlify.app/",
+    image: "public/todoApp-foto.webp"
   },
 ];
 ---
@@ -31,11 +79,12 @@ const PROJECTS = [
 {
   PROJECTS.map((project) => (
     <article class="pt-5">
-      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
+      <h3 class="text-2xl font-semibold text-yellow-200 text-center mb-5">
         {project.title}
       </h3>
-      <img class="rounded-none shadow-white/10" src={project.image} />
+      <img class="rounded-lg shadow-white/10 size-2/4 block m-auto" src={project.image} />
       <p class="text-lg mb-4 text-pretty">{project.description}</p>
+  
       <ul class="flex gap-x-2 flex-row">
         {project.tags.map((tag) => (
           <li>
@@ -48,6 +97,10 @@ const PROJECTS = [
           </li>
         ))}
       </ul>
+      <div class="flex flex-col mt-4 ">
+      <a href={project.link} target="_blank"> link: {project.link}</a>
+      <a href={project.github} target="_blank"> link: {project.github}</a>
+      </div>
     </article>
   ))
 }
