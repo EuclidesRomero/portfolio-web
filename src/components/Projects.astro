@@ -6,6 +6,12 @@ import Htm5 from "./icons/Htm5.astro"
 import Css from './icons/Css.astro';
 import Firebase from "./icons/Firebase.astro";
 import React from "./icons/React.astro"
+import TypeScript from "./icons/TypeScript.astro";
+import Express from  "./icons/Nextjs.astro"
+import Nodejs from "./icons/Nodejs.astro"
+import Jwt from "./icons/Jwt.astro"
+import PostgreSQL from "./icons/PostgreSQL.astro" 
+import Aws from "./icons/Aws.astro";
 
 const TAGS = {
   NEXT: {
@@ -49,11 +55,60 @@ const TAGS = {
     name: "React js",
     color: "bg-[#003159] text-white",
     icon: React,
+  },
+
+  TypeScript: {
+    name: "TypeScript",
+    color: "bg-[#003159] text-white",
+    icon: TypeScript
+
+  },
+  Express: {
+    name: "Express js",
+    color: "bg-[#003159] text-white",
+    icon: Express
+
+  },
+  Nodejs: {
+    name: "Node js",
+    color: "bg-[#003159] text-white",
+    icon: Nodejs
+
+  },
+  Jwt: {
+    name: "JWT",
+    color: "bg-[#003159] text-white",
+    icon: Jwt
+
+  },
+
+  PostgreSQL: {
+    name:"PostgreSQL",
+    color: "bg-[#003159] text-white",
+    icon: PostgreSQL
+  },
+
+  Aws:{
+    name: "Aws",
+    color: "bg-[#0000] text-white",
+    icon: Aws
+
   }
   
 };
 const PROJECTS = [
+
 {
+    title:"Dashboard- Administrador de negocios",
+    name: "",
+    description: "Este proyecto surge para abordar una necesidad real en los negocios locales de los barrios en Colombia. Su enfoque principal es optimizar el proceso de manejo de créditos que estos negocios ofrecen a sus clientes, eliminando la dependencia del papel, que es el método tradicionalmente utilizado. La aplicación permite tanto al propietario del negocio gestionar de forma sencilla los créditos de sus clientes como a los mismos clientes consultar el estado de su cuenta a través de un enlace personalizado. De este modo, se facilita el seguimiento y la gestión de los créditos de manera más eficiente. La app será desarrollada en React Native para garantizar una mayor accesibilidad y facilidad de uso en dispositivos móviles.",
+    tags: [TAGS.TypeScript, TAGS.React, TAGS.TAILWIND, TAGS.PostgreSQL, TAGS.Nodejs, TAGS.Express, TAGS.Jwt, TAGS.Aws],
+    github: "https://github.com/EuclidesRomero/Frontend-admin",
+    link: "https://financeflowadmin.netlify.app",
+    image: "/dashboard-admin.png"
+  },
+
+  {
     title:"Artesanias Colombianas",
     name: "",
     description:
@@ -73,6 +128,7 @@ const PROJECTS = [
     link: "https://todo-app-edev.netlify.app/",
     image: "/todoApp-foto.webp"
   },
+ 
 ];
 ---
 
@@ -82,7 +138,7 @@ const PROJECTS = [
       <h3 class="text-2xl font-semibold text-yellow-200 text-center mb-5">
         {project.title}
       </h3>
-      <img class="rounded-lg shadow-white/10 size-2/4 block m-auto" src={project.image} />
+      <img class="rounded-lg shadow-white/10 size-2/4 block m-auto mb-5" src={project.image} />
       <p class="text-lg mb-4 text-pretty">{project.description}</p>
   
       <ul class="flex gap-x-2 flex-row">
